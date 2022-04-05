@@ -28,9 +28,9 @@ class User(UserMixin, db.Model):
     def unhashed_password(self):
         raise AttributeError('Cannot view unhashed password!')
 
-#     @unhashed_password.setter
-#     def unhashed_password(self, unhashed_password):
-#         self.password = generate_password_hash(unhashed_password)
+    @unhashed_password.setter
+    def unhashed_password(self, unhashed_password):
+        self.password = generate_password_hash(unhashed_password)
 
 class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
